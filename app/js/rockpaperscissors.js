@@ -77,7 +77,7 @@ function getWinner(playerMove,computerMove) {
 	case 'scissors':
 		switch(computerMove){
 			case 'paper':
-				winner = 'player':
+				winner = 'player';
 				break;
 			case 'scissors':
 				winner = 'tie';
@@ -91,7 +91,7 @@ function getWinner(playerMove,computerMove) {
 		}
 		break;
 	default:
-		winner = 'tie':
+		winner = 'tie';
 		alert ('invalid playerMove');
     }		
     return winner;
