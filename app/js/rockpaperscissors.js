@@ -107,8 +107,8 @@ function playTo(x) {
     var gameEnd = false;
 
     while (!gameEnd){
-	pMove = getInput();
-	cMove = randomPlay();
+	pMove = getPlayerMove(null);
+	cMove = getComputerMove(null);
 	curWinner = getWinner(pMove, cMove);
 	switch (curWinner){
 		case 'player':
@@ -124,11 +124,20 @@ function playTo(x) {
 	console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
 	if (playerWins === x || computerWins === x) gameEnd = true;
     }
-
+    
+    if (playerWins > computerWins) {
+        console.log("The player is the series winner!");
+        console.log("That'll show that RNG algorithm.");
+    }
+    else {
+        console.log("The computer is the series winner...");
+        console.log("All hail our machine overlords!");
+    }
     return [playerWins, computerWins];
 }
 
 function playToFive(){
     return playTo(5);
 }
+
 
